@@ -26,8 +26,6 @@ Route::get('/', function () {
 
 Route::get('dashboard', [AdvertResponseController::class, 'dashboard'])->name('dashboard')->middleware('auth', 'verified');
 
-Route::resource('chirps', ChirpController::class)
-    ->middleware(['auth', 'verified']);
 
 // admin
 Route::get('admin', [AdminController::class, 'dashboard'])->name('admin')->middleware('auth', 'verified');
